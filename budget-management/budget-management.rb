@@ -48,8 +48,8 @@ class BudgetManager
   end
 
   def display_menu
-    menu = " 1) New income\n 2) New expanse\n 3) Search a record\n 4) List all records "
-    print menu
+    menu = " 1) New income\n 2) New expanse\n 3) Search a record\n 4) List all records"
+    puts menu
     gets.chomp
   end
 
