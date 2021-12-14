@@ -23,9 +23,9 @@ class BudgetManager
       data_hash = JSON.parse(file, symbolize_names: true)
       puts "#{data_hash[:name]}, your balance is #{data_hash[:balance]}"
     else
-      puts "Enter your name:"
+      print "Enter your name: "
       name = gets.to_s.chomp
-      puts "Enter your budget:"
+      print "Enter your budget: "
       budget = gets.to_f
 
       user = {
@@ -48,8 +48,8 @@ class BudgetManager
   end
 
   def display_menu
-    menu = " 1) New income\n 2) New expanse\n 3) Search a record\n 4) List all records\n"
-    puts menu
+    menu = " 1) New income\n 2) New expanse\n 3) Search a record\n 4) List all records "
+    print menu
     gets.chomp
   end
 
@@ -64,7 +64,7 @@ class BudgetManager
       save_record(record)
       update_balance(record[:type], record[:amount])
     when 3
-      puts "Enter search term:"
+      print "Enter search term: "
       term = gets.chomp
       search_records(term)
     when 4
@@ -115,9 +115,9 @@ class BudgetManager
 
   def get_record_input(record_type)
     puts "*** New #{record_type} ***"
-    puts "Enter an amount:"
+    print "Enter an amount: "
     amount = gets.to_f
-    puts "Enter a note:"
+    print "Enter a note: "
     note = gets.chomp
     { type: record_type, amount: amount, note: note == "" ? "General" : note }
   end
